@@ -13,7 +13,7 @@ class BowlingGame
         $this->rolls[] = $pins;
     }
 
-    public function score()
+    public function score(): int
     {
         $score = 0;
         $roll = 0;
