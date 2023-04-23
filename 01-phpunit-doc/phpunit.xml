@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.5/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         cacheResultFile=".phpunit.cache/test-results"
+         executionOrder="depends,defects"
+         forceCoversAnnotation="true"
+         beStrictAboutCoversAnnotation="true"
+         beStrictAboutOutputDuringTests="true"
+         beStrictAboutTodoAnnotatedTests="true"
+         convertDeprecationsToExceptions="true"
+         failOnRisky="true"
+         failOnWarning="true"
+         verbose="true"
+         colors="true"
+         testdox="true">
+    <testsuites>
+        <testsuite name="default">
+            <directory>tests</directory>
+        </testsuite>
+        <testsuite name="money">
+            <file>tests/IntlFormatterTest.php</file>
+            <file>tests/MoneyTest.php</file>
+            <file>tests/CurrencyTest.php</file>
+        </testsuite>
+        <testsuite name="appendix">
+            <directory>tests/appendix</directory>
+        </testsuite>
+    </testsuites>
+
+    <coverage cacheDirectory=".phpunit.cache/code-coverage"
+              processUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">tests</directory>
+            <file>tests/CurrencyTest.php</file>
+        </include>
+    </coverage>
+    <logging>
+        <junit outputFile="covers/junit.xml"/>
+        <teamcity outputFile="covers/teamcity.txt"/>
+        <testdoxHtml outputFile="covers/testdox.html"/>
+        <testdoxText outputFile="covers/testdox.txt"/>
+        <testdoxXml outputFile="covers/testdox.xml"/>
+        <text outputFile="covers/logfile.txt"/>
+    </logging>
+</phpunit>
