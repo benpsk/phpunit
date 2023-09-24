@@ -3,7 +3,7 @@
     "description": "'PHP Unit Test'",
     "authors": [
         {
-            "name": "Ben Gunn",
+            "name": "Ben Gunn"
         }
     ],
     "autoload": {
